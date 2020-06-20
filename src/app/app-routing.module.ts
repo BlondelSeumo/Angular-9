@@ -1,4 +1,3 @@
-import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {TestFormComponent} from './views/test-form/test-form.component';
 import {GuestLayoutComponent} from './components/layout/guest-layout/guest-layout.component';
@@ -7,13 +6,12 @@ import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {
+    component: GuestLayoutComponent,
     component: AuthLayoutComponent,
     canActivate: [AuthGuard],
     children: [
       {
         component: TestFormComponent,
-        path: 'test-form',
-      },
     ],
     path: '',
   },
@@ -23,12 +21,14 @@ const routes: Routes = [
   },
   {
     path: '**',
+    redirectTo: ''
     redirectTo: 'auth'
   },
 ];
 
 @NgModule({
   exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
   imports: [RouterModule.forRoot(routes, {useHash: true})],
 })
 export class AppRoutingModule { }
