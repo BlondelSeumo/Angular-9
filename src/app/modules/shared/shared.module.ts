@@ -7,7 +7,8 @@ import { GuestLayoutComponent } from '../../components/layout/guest-layout/guest
 import {RouterModule} from '@angular/router';
 import {SharedService} from './shared.service';
 import { AuthLayoutComponent } from '../../components/layout/auth-layout/auth-layout.component';
-import { DialogComponent } from '../../components/dialog/dialog.component';
+import { DialogComponent } from '../../components/dialog/dialog.component'; 
+
 
 @NgModule({
   declarations: [
