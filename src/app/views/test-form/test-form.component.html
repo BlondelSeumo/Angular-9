@@ -3,27 +3,27 @@
 
     <div class="mt-5">
       <div class="form-group">
-        <label class="form-label required">Your Name</label>
+        <label class="form-label required">Enter Your Name</label>
         <input formControlName="name" type="text" class="form-control">
       </div>
 
       <div class="form-group">
-        <label class="form-label">Your Picture</label>
+        <label class="form-label">Enter Your Picture</label>
         <input type="file" (change)="handlePictureSelect($event)" class="form-control">
       </div>
 
       <div class="form-group">
-        <label class="form-label required">Your Username</label>
+        <label class="form-label required">Enter Your Username</label>
         <input formControlName="username" type="text" class="form-control">
       </div>
       <div class="form-group">
-        <label class="form-label required">Your Password</label>
+        <label class="form-label required">Enter Your Password</label>
         <input  formControlName="password" type="password" class="form-control" autocomplete="off">
-        <span class="badge badge-danger" *ngIf="form?.get('password')?.errors ?.minlength">Requires atleast 5 characters !!!</span>
+        <span class="badge badge-danger" *ngIf="form?.get('password')?.errors ?.minlength">Please, it Requires atleast 5 characters !!!</span>
       </div>
 
       <div class="footer d-flex justify-content-center btn-group">
-        <button class="btn btn-primary" [disabled]="!form?.valid || busy" (click)="submit()">{{ busy ? 'Please wait ...' : 'Save User' }}</button>
+        <button class="btn btn-primary" [disabled]="!form?.valid || busy" (click)="submit()">{{ busy ? 'Please wait a moment ...' : 'Save User Now' }}</button>
       </div>
     </div>
 
@@ -33,11 +33,11 @@
 
   <h3>PIPES</h3>
   <div>
-    This is how pipes can be used
+    This is basically how pipes can be used
     <pre> {{ form?.value | json }} </pre>
   </div>
 
   <hr>
-  <h3>Open Dynamic Component</h3>
+  <h3>Open The Dynamic Component</h3>
   <button class="btn btn-secondary" (click)="openDynamicComponent()">Open</button>
 </div>
